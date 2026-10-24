@@ -52,33 +52,6 @@ Acesse **http://localhost:5173/admin** e entre com:
 |---|---|
 | `admin@tereverde.local` | `TereVerde@2026` |
 
-### 4. Rodar os testes (opcional)
-
-```bash
-npm test
-```
-
-Executa 54 testes (unitários + integração) dentro do runtime do Workers, com banco e armazenamento isolados. Não depende do passo 2 nem do servidor aberto.
-
----
-
-## Roteiro rápido para avaliar
-
-**Como visitante (sem login):**
-1. Página inicial: aviso urgente no topo, atrações em destaque e próximos eventos.
-2. **Atrações:** busca e filtros por categoria e status. Abra uma atração para ver informações, segurança, temporadas e eventos.
-3. **Eventos:** filtros por data, categoria e texto.
-4. **Segurança:** avisos ativos, temporadas, atrações com acesso restrito e telefones de emergência.
-
-**Como administrador (`/admin`):**
-1. Aba **Atrações:** mude a disponibilidade (aberta, fechada, em manutenção) direto na tabela; depois veja o efeito na página pública da atração. Crie, edite e desative atrações; envie foto pelo formulário.
-2. Aba **Avisos:** crie um aviso urgente e veja-o aparecer no topo do site; desative-o em seguida.
-3. Aba **Temporadas:** crie uma temporada *fechada* para uma atração cobrindo a data de hoje; a atração passa a aparecer como fechada automaticamente.
-4. Aba **Eventos:** crie um evento como *rascunho* (não aparece no site) e depois como *publicado*.
-5. **Minha conta** (botão no topo do painel): altere nome, e-mail (digite caracteres inválidos e veja o filtro) e senha. Depois de trocar a senha, a antiga deixa de funcionar.
-6. Aba **Auditoria:** cada ação acima fica registrada (quem, o quê e quando). Desativar um registro **não apaga** os dados, só o esconde do site.
-
----
 
 ## Situação-problema
 
@@ -91,15 +64,6 @@ Atores: **administradores** (mantêm o conteúdo) e **visitantes** (consultam, s
 ## Objetivo do MVP
 
 Substituir um site estático por uma aplicação com API, banco de dados e autenticação, em que administradores autenticados cadastram, consultam, editam, **desativam** e controlam a disponibilidade de atrações, eventos, temporadas e avisos, enquanto visitantes consultam informações públicas atualizadas.
-
-## Escopo e priorização (MoSCoW)
-
-| Prioridade | Itens |
-|---|---|
-| **Must have** | Login de administrador · CRUD de atrações com status aberta/fechada/manutenção · CRUD de eventos · avisos urgentes no topo do site · consulta pública com filtros · persistência em banco · validação no servidor |
-| **Should have** | Temporadas (alta/baixa/fechada) com bloqueio automático · desativação lógica · trilha de auditoria · upload de imagens · página de segurança |
-| **Could have** | Painel com indicadores · créditos de imagem · cache de borda · teste de carga |
-| **Won't have** (fora do escopo) | Pagamentos · venda de ingressos · aplicativo mobile nativo · recomendação por IA · integração automática com redes sociais · contas e favoritos de visitantes · comentários e avaliações · MFA (evolução futura) |
 
 ## Requisitos funcionais
 
@@ -177,30 +141,3 @@ Especificação completa em [`docs/openapi.yaml`](docs/openapi.yaml).
 - **Públicos:** `GET /api/attractions` · `GET /api/attractions/:slug` · `GET /api/events` · `GET /api/notices` · `GET /api/seasons` · `GET /api/media/*`
 - **Auth:** `POST /api/auth/login` · `POST /api/auth/logout` · `GET /api/auth/me`
 - **Admin (exigem login):** `GET|PUT /api/admin/profile` · `PUT /api/admin/password` · `GET /api/admin/stats` · `GET /api/admin/audit` · `/api/admin/attractions` · `/api/admin/events` · `/api/admin/notices` · `/api/admin/seasons` (GET, POST, PUT, DELETE) · `PATCH /api/admin/attractions/:id/status` · `POST /api/admin/upload`
-
-## Teste de carga (opcional)
-
-Com o projeto rodando (`npm run dev`) e Python instalado:
-
-```bash
-pip install locust
-locust -f test/load/locustfile.py --host http://localhost:5173 --headless -u 50 -r 10 -t 30s
-```
-
-Medição local feita pela equipe (30 usuários por 20 s): 457 requisições, 0 falhas, p95 de 31 ms na lista de atrações (meta: 2 s).
-
-## Problemas comuns
-
-| Sintoma | Solução |
-|---|---|
-| `npm run dev` diz que a porta 5173 está em uso | Feche o outro processo ou rode `npm run dev -- --port 5180`. |
-| Atrações aparecem sem fotos | Rode `npm run setup` novamente (é seguro repetir). |
-| Quer zerar o banco local | Apague a pasta `.wrangler` e rode `npm run setup`. |
-| Erro de login "Muitas tentativas" | Aguarde 10 minutos ou apague `.wrangler` e rode `npm run setup`. |
-| Fontes diferentes do design | Sem internet o Google Fonts não carrega; o site continua funcionando com fontes padrão. |
-
-## Observações
-
-- Os dados em `data/migrations/0002` e `0005` são **exemplos** (inclusive as datas de temporada) e devem ser revisados com a gestão dos parques antes de divulgar.
-- As fotos vêm do Wikimedia Commons (licenças livres) e têm o crédito exibido no site.
-- O visual segue o design system em [`design-system/`](design-system/index.html).
