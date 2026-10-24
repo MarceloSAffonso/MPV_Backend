@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Circuito Terê Verde">
+  <defs><clipPath id="c"><circle cx="60" cy="60" r="54"/></clipPath></defs>
+  <circle cx="60" cy="60" r="54" fill="#1b3426"/>
+  <g clip-path="url(#c)">
+    <circle cx="87" cy="36" r="9" fill="#d8a24a"/>
+
+    <path d="M0 80 L20 62 L34 72 L52 52 L72 70 L92 56 L120 78 V120 H0Z" fill="#3f7352"/>
+
+    <path d="M42 90 L45 46 Q46 34 51 24 Q53 22 54 26 Q57 36 58 48 L63 90Z" fill="#a9c29b"/>
+    <path d="M51 24 Q53 22 54 26 Q57 36 58 48 L63 90 L53 90 Q53 55 51 24Z" fill="#87a878"/>
+
+    <path d="M0 94 L28 78 L50 90 L82 68 L120 92 V120 H0Z" fill="#2f5a3f"/>
+    <path d="M0 106 Q40 90 70 102 T120 100 V120 H0Z" fill="#14261b"/>
+
+    <path d="M58 120 C44 112 80 108 66 100 C56 94 74 90 70 84" fill="none" stroke="#f1ede3" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="1 6"/>
+  </g>
+
+  <circle cx="60" cy="60" r="57.5" fill="none" stroke="#d8a24a" stroke-width="1.6" stroke-dasharray="320 40" stroke-linecap="round" transform="rotate(-70 60 60)"/>
+
+  <path d="M96 14 C108 16 112 28 106 36 C94 34 90 22 96 14Z" fill="#87a878"/>
+  <path d="M97 17 Q102 26 105 34" fill="none" stroke="#1b3426" stroke-width="1" stroke-linecap="round"/>
+</svg>

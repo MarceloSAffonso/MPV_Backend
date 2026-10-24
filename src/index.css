@@ -1,0 +1,129 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.875rem;
+  --background: #f1ede3;
+  --foreground: #19211b;
+  --card: #f8f5ee;
+  --card-foreground: #19211b;
+  --popover: #f8f5ee;
+  --popover-foreground: #19211b;
+  --primary: #24432f;
+  --primary-foreground: #f8f5ee;
+  --secondary: #e3eadb;
+  --secondary-foreground: #24432f;
+  --muted: #e4ddcd;
+  --muted-foreground: #667268;
+  --accent: #e3eadb;
+  --accent-foreground: #24432f;
+  --destructive: #a8552f;
+  --border: #cfc6b2;
+  --input: #cfc6b2;
+  --ring: #d8a24a;
+  --chart-1: #3f7352;
+  --chart-2: #c26b3f;
+  --chart-3: #d8a24a;
+  --chart-4: #6a838d;
+  --chart-5: #87a878;
+}
+
+@theme inline {
+  --font-sans: "DM Sans", "Segoe UI", system-ui, sans-serif;
+  --font-serif: "Fraunces", "Iowan Old Style", Georgia, serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+
+  --color-floresta-900: #14261b;
+  --color-floresta-800: #1b3426;
+  --color-floresta-700: #24432f;
+  --color-floresta-600: #2f5a3f;
+  --color-floresta-500: #3f7352;
+  --color-musgo-500: #6b8f5e;
+  --color-musgo-400: #87a878;
+  --color-musgo-300: #a9c29b;
+  --color-salvia-200: #cbd8c0;
+  --color-salvia-100: #e3eadb;
+  --color-nevoa-700: #3b4f58;
+  --color-nevoa-500: #6a838d;
+  --color-nevoa-300: #aebfc5;
+  --color-nevoa-100: #e0e8ea;
+  --color-terra-600: #a8552f;
+  --color-terra-500: #c26b3f;
+  --color-terra-300: #e0a57f;
+  --color-ambar-500: #d8a24a;
+  --color-ambar-300: #ebcb8b;
+  --color-pedra-50: #f8f5ee;
+  --color-pedra-100: #f1ede3;
+  --color-pedra-200: #e4ddcd;
+  --color-pedra-300: #cfc6b2;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    line-height: 1.65;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-variation-settings: "SOFT" 100, "opsz" 144;
+    letter-spacing: -0.015em;
+    line-height: 1.1;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-[0.72rem] font-medium uppercase tracking-[0.22em] text-muted-foreground;
+  }
+  .eyebrow::after {
+    content: "";
+    width: 56px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.5;
+  }
+  .btn-label {
+    @apply text-[0.78rem] font-medium uppercase tracking-[0.14em];
+  }
+}

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design System — Circuito Terê Verde</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  .wrap { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
+  section { padding: var(--space-8) 0; border-top: 1px solid var(--color-border); }
+  .hero { background: var(--tv-floresta-800); color: var(--color-text-on-dark); padding: var(--space-7) 0 var(--space-8); border: 0;
+          background-image: linear-gradient(180deg, rgb(20 38 27 / .2), rgb(20 38 27 / .9)); }
+  .hero .tv-eyebrow { color: var(--tv-ambar-300); }
+  .hero h1 { margin-top: var(--space-6); max-width: 12ch; }
+  .hero p { max-width: 52ch; font-size: var(--fs-lead); color: var(--tv-salvia-200); }
+  nav.top { display:flex; justify-content:space-between; align-items:center; padding: var(--space-5) 0; }
+  nav.top img { height: 52px; }
+  nav.top a { color: var(--tv-salvia-200); font-size: var(--fs-small); text-decoration:none; margin-left: var(--space-5); }
+  .head { display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); align-items:end; margin-bottom: var(--space-7); }
+  .head p { color: var(--color-text-muted); margin:0; }
+  .grid { display:grid; gap: var(--space-5); }
+  .g-logos { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .logo-tile { border-radius: var(--radius-md); padding: var(--space-6); display:grid; place-items:center; min-height: 190px; }
+  .logo-tile img { max-width: 100%; }
+  .pal { margin-bottom: var(--space-6); }
+  .pal h4 { font-size: 1rem; font-family: var(--font-body); font-weight:600; margin-bottom: var(--space-3); }
+  .pal small { color: var(--color-text-muted); font-weight:400; margin-left: var(--space-2); }
+  .swatches { display:grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: var(--space-3); }
+  .sw { border-radius: var(--radius-sm); overflow:hidden; border:1px solid var(--color-border); background: var(--tv-pedra-50); }
+  .sw i { display:block; height: 64px; }
+  .sw span { display:block; padding: var(--space-2) var(--space-3); font-size: .75rem; line-height:1.4; }
+  .sw b { display:block; font-weight:600; }
+  .type-row { display:grid; grid-template-columns: 150px 1fr; gap: var(--space-5); padding: var(--space-5) 0; border-bottom:1px solid var(--color-border); align-items: baseline; }
+  .type-row > span { font-size:.78rem; color: var(--color-text-muted); }
+  .g-cards { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .row { display:flex; flex-wrap:wrap; gap: var(--space-4); align-items:center; }
+  .dark { background: var(--tv-floresta-800); padding: var(--space-6); border-radius: var(--radius-md); }
+  .space-bar { height: 14px; background: var(--tv-musgo-400); border-radius: 3px; }
+  code { background: var(--tv-pedra-200); padding: .1rem .4rem; border-radius: 4px; font-size:.85em; }
+  @media (max-width: 760px){ .head{grid-template-columns:1fr;} .type-row{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <nav class="top">
+      <img src="logo/logo-horizontal-claro.svg" alt="Circuito Terê Verde">
+      <div><a href="#logo">Logo</a><a href="#cores">Cores</a><a href="#tipografia">Tipografia</a><a href="#componentes">Componentes</a></div>
+    </nav>
+    <span class="tv-eyebrow">Design System · v1.0</span>
+    <h1>Natureza, calma e <em style="color:var(--tv-terra-300)">serra.</em></h1>
+    <p>Diretrizes visuais do site do Circuito Terê Verde, em Teresópolis. Inspirado em luz de montanha, névoa matinal e Mata Atlântica: paleta natural, serifa orgânica e muito respiro.</p>
+  </div>
+</header>
+
+<section id="logo">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="tv-eyebrow">01 · Marca</span><h2>O Dedo de Deus no <em>circuito</em></h2></div>
+      <p>O símbolo une o perfil do Dedo de Deus, a serra em camadas, o sol da manhã e uma trilha pontilhada. O anel dourado aberto lembra um circuito que se percorre, e a folha ancora a identidade na mata.</p>
+    </div>
+    <div class="grid g-logos">
+      <div class="logo-tile" style="background:var(--tv-pedra-50);border:1px solid var(--color-border)"><img src="logo/logo-horizontal.svg" alt="Logo horizontal"></div>
+      <div class="logo-tile" style="background:var(--tv-floresta-800)"><img src="logo/logo-horizontal-claro.svg" alt="Logo horizontal sobre fundo escuro"></div>
+      <div class="logo-tile" style="background:var(--tv-salvia-100)"><img src="logo/mark.svg" alt="Símbolo" width="120"></div>
+    </div>
+    <p style="margin-top:var(--space-5);color:var(--color-text-muted);font-size:var(--fs-small)">
+      Área de respiro: metade da altura do símbolo em todos os lados. Tamanho mínimo: 28 px de altura (símbolo) / 120 px de largura (horizontal). Use a versão clara apenas sobre Floresta 700–900 ou fotos escurecidas. Não distorcer, girar ou trocar as cores.
+    </p>
+  </div>
+</section>
+
+<section id="cores">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="tv-eyebrow">02 · Cor</span><h2>Paleta <em>da serra</em></h2></div>
+      <p>Verdes profundos como base, névoa azulada para respiro, terracota e âmbar como acentos quentes de pôr do sol. Fundos claros em tons de pedra, nunca branco puro.</p>
+    </div>
+    <div id="palette"></div>
+  </div>
+</section>
+
+<section id="tipografia">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="tv-eyebrow">03 · Tipografia</span><h2>Serifa <em>orgânica</em></h2></div>
+      <p><b>Fraunces</b> (eixo SOFT em 100) dá curvas macias e calorosas aos títulos. <b>DM Sans</b> traz leitura limpa para texto e rótulos. Eyebrows e botões em caixa alta com tracking aberto.</p>
+    </div>
+    <div class="type-row"><span>Display / H1<br>Fraunces 400</span><h1 style="margin:0">Encontre seu lugar de calma.</h1></div>
+    <div class="type-row"><span>H2<br>Fraunces 400</span><h2 style="margin:0">Trilhas mais selvagens, dias mais leves.</h2></div>
+    <div class="type-row"><span>H3 / Título de card</span><h3 style="margin:0">Vale das Cachoeiras</h3></div>
+    <div class="type-row"><span>Eyebrow<br>DM Sans 500 · .22em</span><span class="tv-eyebrow" style="font-size:var(--fs-eyebrow);color:var(--color-text)">Nossos destinos</span></div>
+    <div class="type-row"><span>Lead<br>DM Sans 400 · 1.2rem</span><p style="margin:0;font-size:var(--fs-lead)">Do alto da Serra dos Órgãos aos vales de Mata Atlântica, roteiros pensados para quem busca natureza de verdade.</p></div>
+    <div class="type-row"><span>Corpo<br>DM Sans 400 · 1rem/1.65</span><p style="margin:0;max-width:62ch">O Circuito Terê Verde conecta propriedades rurais, trilhas, cachoeiras e sabores locais de Teresópolis, valorizando quem cuida do território e quem o visita com respeito.</p></div>
+  </div>
+</section>
+
+<section id="componentes">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="tv-eyebrow">04 · Componentes</span><h2>Peças <em>do site</em></h2></div>
+      <p>Botões em pílula com contorno fino, cards com foto e gradiente floresta, campos suaves. Cantos arredondados moderados e sombras esverdeadas.</p>
+    </div>
+
+    <h4>Botões</h4>
+    <div class="row" style="margin-bottom:var(--space-6)">
+      <a class="tv-btn tv-btn--solid" href="#">Reservar visita <span class="tv-btn__arrow">→</span></a>
+      <a class="tv-btn" href="#">Explorar roteiros <span class="tv-btn__arrow">→</span></a>
+      <a class="tv-btn tv-btn--accent" href="#">Planejar passeio <span class="tv-btn__arrow">→</span></a>
+      <div class="dark"><a class="tv-btn tv-btn--light" href="#">Ver todos <span class="tv-btn__arrow">→</span></a></div>
+    </div>
+
+    <h4>Tags e campos</h4>
+    <div class="row" style="margin-bottom:var(--space-4)">
+      <span class="tv-tag">Trilha</span><span class="tv-tag tv-tag--terra">Gastronomia</span><span class="tv-tag tv-tag--nevoa">Montanha</span>
+    </div>
+    <div class="row" style="margin-bottom:var(--space-6)"><input class="tv-input" style="max-width:340px" placeholder="Seu e-mail"><input class="tv-input" style="max-width:340px" type="date"></div>
+
+    <h4>Cards de destino</h4>
+    <div class="grid g-cards">
+      <article class="tv-card"><div class="tv-card__media" style="background-image:linear-gradient(160deg,#6a838d,#2f5a3f 70%)"></div><div class="tv-card__body"><h3 class="tv-card__title">Dedo de Deus</h3><div class="tv-card__meta">Parque Nacional</div></div></article>
+      <article class="tv-card"><div class="tv-card__media" style="background-image:linear-gradient(160deg,#d8a24a,#3f7352 65%)"></div><div class="tv-card__body"><h3 class="tv-card__title">Vale das Cachoeiras</h3><div class="tv-card__meta">Trilha leve</div></div></article>
+      <article class="tv-card"><div class="tv-card__media" style="background-image:linear-gradient(160deg,#c26b3f,#24432f 65%)"></div><div class="tv-card__body"><h3 class="tv-card__title">Sítios e Sabores</h3><div class="tv-card__meta">Turismo rural</div></div></article>
+    </div>
+    <p style="color:var(--color-text-muted);font-size:var(--fs-small)">Gradientes são placeholders; use fotos reais com o overlay <code>--overlay-forest</code>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <div><span class="tv-eyebrow">05 · Fundamentos</span><h2>Espaço, raio <em>e sombra</em></h2></div>
+      <p>Escala de espaçamento base 4 px, container de 1200 px, movimento suave (280 ms, ease-out).</p>
+    </div>
+    <div id="spacing" style="display:grid;gap:8px;max-width:520px;margin-bottom:var(--space-6)"></div>
+    <div class="row">
+      <div style="width:110px;height:80px;background:var(--tv-pedra-50);border:1px solid var(--color-border);border-radius:var(--radius-sm);display:grid;place-items:center;font-size:.75rem">radius-sm</div>
+      <div style="width:110px;height:80px;background:var(--tv-pedra-50);border:1px solid var(--color-border);border-radius:var(--radius-md);display:grid;place-items:center;font-size:.75rem">radius-md</div>
+      <div style="width:110px;height:80px;background:var(--tv-pedra-50);border:1px solid var(--color-border);border-radius:var(--radius-lg);display:grid;place-items:center;font-size:.75rem">radius-lg</div>
+      <div style="width:110px;height:80px;background:var(--tv-pedra-50);box-shadow:var(--shadow-md);border-radius:var(--radius-md);display:grid;place-items:center;font-size:.75rem">shadow-md</div>
+      <div style="width:110px;height:80px;background:var(--tv-pedra-50);box-shadow:var(--shadow-lg);border-radius:var(--radius-md);display:grid;place-items:center;font-size:.75rem">shadow-lg</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const palettes = [
+    ["Floresta","cor primária",[["900","#14261b"],["800","#1b3426"],["700","#24432f"],["600","#2f5a3f"],["500","#3f7352"]]],
+    ["Musgo e Sálvia","apoio natural",[["musgo-500","#6b8f5e"],["musgo-400","#87a878"],["musgo-300","#a9c29b"],["salvia-200","#cbd8c0"],["salvia-100","#e3eadb"]]],
+    ["Névoa","céu e montanha",[["700","#3b4f58"],["500","#6a838d"],["300","#aebfc5"],["100","#e0e8ea"]]],
+    ["Terra e Âmbar","acentos quentes",[["terra-600","#a8552f"],["terra-500","#c26b3f"],["terra-300","#e0a57f"],["âmbar-500","#d8a24a"],["âmbar-300","#ebcb8b"]]],
+    ["Pedra","fundos claros",[["50","#f8f5ee"],["100","#f1ede3"],["200","#e4ddcd"],["300","#cfc6b2"]]],
+    ["Tinta","texto",[["900","#19211b"],["700","#3a463d"],["500","#667268"],["300","#98a29a"]]]
+  ];
+  document.getElementById("palette").innerHTML = palettes.map(([n,d,s]) =>
+    `<div class="pal"><h4>${n}<small>${d}</small></h4><div class="swatches">${s.map(([k,h]) =>
+      `<div class="sw"><i style="background:${h}"></i><span><b>${k}</b>${h}</span></div>`).join("")}</div></div>`).join("");
+  const sp = [["space-1","4px"],["space-2","8px"],["space-3","12px"],["space-4","16px"],["space-5","24px"],["space-6","32px"],["space-7","48px"],["space-8","72px"]];
+  document.getElementById("spacing").innerHTML = sp.map(([n,v]) =>
+    `<div style="display:grid;grid-template-columns:90px 50px 1fr;align-items:center;gap:12px;font-size:.78rem"><span>${n}</span><span style="color:var(--color-text-muted)">${v}</span><div class="space-bar" style="width:${v}"></div></div>`).join("");
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+INSERT INTO attractions (slug, name, category, summary, description, location, difficulty, distance_km, duration, altitude_m, status, safety_notes, featured) VALUES
+('pedra-do-sino', 'Pedra do Sino', 'trilha',
+ 'O ponto mais alto da Serra dos Órgãos, com vista de 360° em dias limpos.',
+ 'Trilha clássica de montanha que sobe pela Serra dos Órgãos até o cume da Pedra do Sino. O caminho cruza mata atlântica, campos de altitude e trechos de pedra, com paisagens que mudam a cada curva.',
+ 'Parque Nacional da Serra dos Órgãos · Teresópolis', 'dificil', 11, '6 a 8 h (ida e volta)', 2263, 'aberta',
+ 'Saia cedo, leve água, lanche, agasalho e capa de chuva. Siga as regras e os horários do parque e evite subir com tempo fechado.', 1),
+('dedo-de-deus', 'Dedo de Deus', 'mirante',
+ 'O cartão-postal de Teresópolis: o famoso pico em forma de dedo apontado para o céu.',
+ 'O Dedo de Deus é o símbolo da cidade e da Serra dos Órgãos. Pode ser contemplado de diversos mirantes e é o destino de montanhistas experientes que buscam sua escalada.',
+ 'Serra dos Órgãos · Teresópolis', 'moderada', NULL, 'Mirantes: visita rápida', 1692, 'aberta',
+ 'A escalada é exclusiva para montanhistas experientes, com equipamento e acompanhamento adequados. Contemple dos mirantes com segurança.', 1),
+('cachoeira-veu-da-noiva', 'Cachoeira Véu da Noiva', 'cachoeira',
+ 'Queda d''água delicada em meio à mata, ideal para uma caminhada leve.',
+ 'Uma cachoeira de águas frias e cristalinas, alcançada por trilha curta e bem sinalizada. Ótima opção para famílias e para quem quer um primeiro contato com a serra.',
+ 'Parque Nacional da Serra dos Órgãos · Teresópolis', 'facil', 2, '1 h 30 (ida e volta)', 1000, 'aberta',
+ 'Use calçado com aderência: as pedras ficam escorregadias. Em dias de chuva forte, o nível da água pode subir rapidamente.', 1),
+('poco-do-presidente', 'Poço do Presidente', 'cachoeira',
+ 'Poço de águas claras para um mergulho refrescante após a caminhada.',
+ 'Área de banho em meio à mata atlântica, acessível por trilha leve. Um ótimo lugar para descansar, observar a vegetação e ouvir os sons da floresta.',
+ 'Parque Nacional da Serra dos Órgãos · Teresópolis', 'facil', 1.5, '1 h (ida e volta)', 900, 'manutencao',
+ 'Acesso temporariamente em manutenção. Consulte os avisos antes de ir.', 0),
+('parque-estadual-tres-picos', 'Parque Estadual dos Três Picos', 'parque',
+ 'Uma das maiores áreas de preservação do estado, com trilhas, rios e picos imponentes.',
+ 'Unidade de conservação que protege um grande trecho de mata atlântica da Serra do Mar. Reúne trilhas de diferentes níveis, campos de altitude e abundante fauna e flora nativas.',
+ 'Teresópolis e região serrana', 'moderada', NULL, 'Roteiros de meio dia a vários dias', 2316, 'aberta',
+ 'Verifique regras de visitação e necessidade de condutor antes de percorrer as trilhas mais longas.', 0),
+('parque-natural-municipal-montanhas', 'Parque Natural Municipal Montanhas de Teresópolis', 'parque',
+ 'Área protegida pelo município, perfeita para conhecer a biodiversidade local.',
+ 'Unidade de conservação municipal que preserva remanescentes de mata atlântica nas montanhas da cidade, com trilhas curtas e boas oportunidades para observação de aves.',
+ 'Teresópolis', 'facil', NULL, 'Meio dia', 1000, 'aberta',
+ 'Respeite a sinalização, não alimente os animais e leve de volta todo o lixo.', 0),
+('aves-da-mata-atlantica', 'Observação de aves na Mata Atlântica', 'biodiversidade',
+ 'Uma região com enorme diversidade de aves, orquídeas, bromélias e outros tesouros da mata.',
+ 'A Serra dos Órgãos abriga grande variedade de espécies endêmicas. Caminhe em silêncio, de manhã cedo, e traga binóculos para flagrar aves, borboletas e pequenos mamíferos.',
+ 'Região serrana de Teresópolis', 'facil', NULL, '2 a 3 h', NULL, 'aberta',
+ 'Mantenha distância dos animais e não retire plantas, flores ou sementes.', 0);
+
+INSERT INTO events (title, description, location, date, time, category, status, attraction_id) VALUES
+('Mutirão de limpeza de trilhas', 'Voluntários e gestores unidos para cuidar das trilhas antes da temporada de verão. Luvas e sacos fornecidos.', 'Parque Natural Municipal Montanhas de Teresópolis', '2026-11-14', '08:00', 'voluntariado', 'publicado', 6),
+('Caminhada de observação de aves', 'Passeio guiado e leve para iniciantes, com apoio de guias locais.', 'Região serrana de Teresópolis', '2026-11-21', '06:30', 'caminhada', 'publicado', 7),
+('Feira de produtores rurais do Circuito', 'Produtos da roça, queijos, geleias e artesanato de produtores da região.', 'Centro de Teresópolis', '2026-11-28', '09:00', 'gastronomia', 'publicado', NULL),
+('Palestra: Conservação da Serra dos Órgãos', 'Conversa aberta sobre biodiversidade, trilhas e turismo responsável.', 'Teresópolis', '2026-12-05', '19:00', 'educacao', 'publicado', NULL),
+('Travessia noturna sob a lua cheia', 'Rascunho: aguardando confirmação do parque.', 'Serra dos Órgãos', '2026-12-12', '18:00', 'caminhada', 'rascunho', 1);
+
+INSERT INTO notices (title, message, severity, attraction_id, active) VALUES
+('Poço do Presidente em manutenção', 'O acesso está temporariamente em manutenção. Confira o status antes de sair de casa.', 'alerta', 4, 1);

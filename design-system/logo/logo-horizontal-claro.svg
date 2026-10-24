@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 120" role="img" aria-label="Circuito Terê Verde — Teresópolis">
+  <defs>
+    <style>@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500,100&amp;family=DM+Sans:wght@500&amp;display=swap");</style>
+    <clipPath id="c"><circle cx="60" cy="60" r="54"/></clipPath>
+  </defs>
+  <circle cx="60" cy="60" r="54" fill="#2f5a3f"/>
+  <g clip-path="url(#c)">
+    <circle cx="87" cy="36" r="9" fill="#d8a24a"/>
+    <path d="M0 80 L20 62 L34 72 L52 52 L72 70 L92 56 L120 78 V120 H0Z" fill="#3f7352"/>
+    <path d="M42 90 L45 46 Q46 34 51 24 Q53 22 54 26 Q57 36 58 48 L63 90Z" fill="#cbd8c0"/>
+    <path d="M51 24 Q53 22 54 26 Q57 36 58 48 L63 90 L53 90 Q53 55 51 24Z" fill="#a9c29b"/>
+    <path d="M0 94 L28 78 L50 90 L82 68 L120 92 V120 H0Z" fill="#24432f"/>
+    <path d="M0 106 Q40 90 70 102 T120 100 V120 H0Z" fill="#14261b"/>
+    <path d="M58 120 C44 112 80 108 66 100 C56 94 74 90 70 84" fill="none" stroke="#f1ede3" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="1 6"/>
+  </g>
+  <circle cx="60" cy="60" r="57.5" fill="none" stroke="#d8a24a" stroke-width="1.6" stroke-dasharray="320 40" stroke-linecap="round" transform="rotate(-70 60 60)"/>
+  <path d="M96 14 C108 16 112 28 106 36 C94 34 90 22 96 14Z" fill="#a9c29b"/>
+  <path d="M97 17 Q102 26 105 34" fill="none" stroke="#14261b" stroke-width="1" stroke-linecap="round"/>
+
+  <text x="146" y="40" font-family="'DM Sans',sans-serif" font-weight="500" font-size="12.5" letter-spacing="5.2" fill="#e0a57f">CIRCUITO</text>
+  <text x="144" y="80" font-family="'Fraunces',Georgia,serif" font-weight="500" font-size="46" letter-spacing="-0.8" fill="#f8f5ee" style="font-variation-settings:'SOFT' 100,'opsz' 144">Terê Verde</text>
+  <line x1="146" y1="94" x2="170" y2="94" stroke="#d8a24a" stroke-width="1.4"/>
+  <text x="178" y="98" font-family="'DM Sans',sans-serif" font-weight="500" font-size="10.5" letter-spacing="3.6" fill="#aebfc5">TERESÓPOLIS · RJ</text>
+</svg>
